@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="output.css" />
+    <title>Frontend Mentor | Intro section with dropdown navigation</title>
+  </head>
+  <body class="p min-h-dvh py-8 font-sans">
+    <header class="mx-auto flex w-[min(90%,110rem)] justify-between lg:justify-start lg:gap-20">
+      <img class="self-center" src="images/logo.svg" alt="" />
+      <button class="menu-active:z-30 cursor-pointer lg:hidden" onclick="body.classList.toggle('menu-active') ">
+        <img class="menu-active:hidden" src="images/icon-menu.svg" alt="" />
+        <img class="menu-active:flex hidden" src="images/icon-close-menu.svg" alt="" />
+      </button>
+      <div
+        id="overlay"
+        class="menu-active:block menu-active:fixed lg:menu-active:hidden lg:menu-active:static inset-0 z-10 hidden bg-black/50 lg:static"
+      ></div>
+
+      <nav
+        class="menu-active:fixed menu-active:block lg:menu-active:flex lg:menu-active:static top-0 right-0 z-20 hidden h-dvh w-2/4 bg-white px-6 pt-24 lg:static lg:flex lg:h-auto lg:w-auto lg:grow lg:justify-between lg:p-0"
+      >
+        <ul class="flex flex-col gap-5 lg:flex-row lg:items-center lg:gap-12 [&>li]:cursor-pointer">
+          <li class="relative">
+            <details class="" id="features">
+              <summary class="flex items-center gap-4 lg:gap-2">
+                Features
+                <svg
+                  class="arrow transition-transform duration-300"
+                  width="10"
+                  height="6"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path stroke="#686868" stroke-width="1.5" fill="none" d="m1 1 4 4 4-4" />
+                </svg>
+              </summary>
+              <ul
+                class="menu-list space-y-4 bg-white p-6 lg:absolute lg:top-10 lg:right-0 lg:min-w-[170px] lg:rounded-2xl lg:px-9 lg:shadow-[0_10px_40px_rgba(0,0,0,0.14)]"
+              >
+                <li class="">
+                  <a class="flex items-center gap-3" href="#">
+                    <img class="h-5" src="images/icon-todo.svg" alt="" />
+                    <p class="text-nowrap">Todo List</p>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex items-center gap-3" href="#"
+                    ><img class="h-5" src="images/icon-calendar.svg" alt="" />
+                    <p>Calender</p></a
+                  >
+                </li>
+                <li>
+                  <a class="flex items-center gap-3" href="#"
+                    ><img class="h-5" src="images/icon-reminders.svg" alt="" />
+                    <p>Reminder</p></a
+                  >
+                </li>
+                <li>
+                  <a class="flex items-center gap-3" href="#"
+                    ><img class="h-5" src="images/icon-planning.svg" alt="" />
+                    <p>Planning</p></a
+                  >
+                </li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details class="detail relative" id="company">
+              <summary class="flex items-center gap-4 lg:gap-2">
+                Company
+                <svg
+                  class="arrow transition-transform duration-300"
+                  width="10"
+                  height="6"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path stroke="#686868" stroke-width="1.5" fill="none" d="m1 1 4 4 4-4" />
+                </svg>
+              </summary>
+              <ul
+                class="menu-list space-y-4 bg-white p-6 lg:absolute lg:top-10 lg:min-w-28 lg:rounded-2xl lg:px-8 lg:shadow-[0_10px_40px_rgba(0,0,0,0.14)]"
+              >
+                <li>
+                  <a class="flex items-center gap-3" href="#"> History </a>
+                </li>
+                <li>
+                  <a class="flex items-center gap-3 text-nowrap" href="#">Our Team</a>
+                </li>
+                <li>
+                  <a class="flex items-center gap-3" href="#">Blog</a>
+                </li>
+              </ul>
+            </details>
+          </li>
+          <li class="text-gray-500">Careers</li>
+          <li>About</li>
+        </ul>
+        <div class="mt-6 flex flex-col gap-2 lg:mt-0 lg:flex-row lg:gap-6">
+          <button class="cursor-pointer py-2 lg:self-start lg:px-2">Login</button>
+          <button class="cursor-pointer rounded-xl border-2 border-black py-2 lg:self-start lg:px-6">Register</button>
+        </div>
+      </nav>
+    </header>
+    <main
+      class="sm:my-container mt-[clamp(1.25rem,-0.2905rem+6.5728vw,5.5rem)] grid grid-cols-1 gap-10 lg:grid-cols-[1fr_1fr] lg:grid-rows-[1fr] lg:[&_*]:m-0"
+    >
+      <picture class="mx-auto justify-center lg:col-start-2 lg:flex lg:max-h-[580px] lg:justify-end">
+        <source srcset="images/image-hero-desktop.png" media="(width > 1024px)" />
+        <img class="h-auto lg:h-full" src="images/image-hero-mobile.png" alt="" />
+      </picture>
+      <section
+        class="my-container mt-12 flex flex-col items-center lg:col-start-1 lg:row-start-1 lg:w-full lg:items-start"
+      >
+        <div class="flex flex-1 flex-col items-center justify-center gap-5 lg:items-start lg:gap-12">
+          <h1
+            class="text-center text-[clamp(2.25rem,1.2817rem+4.1315vw,5rem)] leading-none font-bold tracking-tight lg:text-start"
+          >
+            Make <br class="hidden lg:block" />
+            remote work
+          </h1>
+          <p
+            class="text-center text-[clamp(1rem,0.956rem+0.1878vw,1.125rem)] leading-6 font-medium text-balance text-gray-500 lg:text-start"
+          >
+            Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch
+            productivity soar.
+          </p>
+          <button class="rounded-2xl bg-black px-8 py-3 text-lg font-bold text-white">Learn more</button>
+        </div>
+
+        <footer class="mt-16 flex w-full flex-wrap content-center items-center justify-between">
+          <img src="images/client-databiz.svg" alt="" />
+          <img src="images/client-audiophile.svg" alt="" />
+          <img src="images/client-meet.svg" alt="" />
+          <img class="" src="images/client-maker.svg" alt="" />
+        </footer>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@custom-variant menu-active (&:where(.menu-active, .menu-active *));
+@custom-variant open (&:where(.open, .open *));
+@custom-variant group-open (:is(.group[open]) &);
+
+@utility my-container {
+  @apply mx-auto w-[min(90%,80rem)];
+}
+
+@layer utilities {
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+  details > summary {
+    list-style: none;
+  }
+}
+
+details[open] svg {
+  rotate: 180deg;
+}
+
+details .menu-list {
+  transform-origin: top;
+  display: block !important;
+}
