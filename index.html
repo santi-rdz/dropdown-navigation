@@ -9,12 +9,14 @@
     <link rel="stylesheet" href="output.css" />
     <title>Frontend Mentor | Intro section with dropdown navigation</title>
   </head>
-  <body class="p min-h-dvh py-8 font-sans">
+  <body class="p menu-active min-h-dvh py-8 font-sans">
     <header class="mx-auto flex w-[min(90%,110rem)] justify-between lg:justify-start lg:gap-20">
       <img class="self-center" src="images/logo.svg" alt="" />
-      <button class="menu-active:z-30 cursor-pointer lg:hidden" onclick="body.classList.toggle('menu-active') ">
+      <button
+        class="menu-active:z-30 menu-active:fixed menu-active:right-9 cursor-pointer lg:hidden"
+        onclick="body.classList.toggle('menu-active') "
+      >
         <img class="menu-active:hidden" src="images/icon-menu.svg" alt="" />
-        <img class="menu-active:flex hidden" src="images/icon-close-menu.svg" alt="" />
       </button>
       <div
         id="overlay"
@@ -22,9 +24,12 @@
       ></div>
 
       <nav
-        class="menu-active:fixed menu-active:block lg:menu-active:flex lg:menu-active:static top-0 right-0 z-20 hidden h-dvh w-2/4 bg-white px-6 pt-24 lg:static lg:flex lg:h-auto lg:w-auto lg:grow lg:justify-between lg:p-0"
+        class="menu-active:fixed menu-active:block lg:menu-active:flex lg:menu-active:static top-0 right-0 z-20 hidden h-dvh w-2/4 bg-white px-[clamp(1rem,-0.6827rem+7.1795vw,2.75rem)] pt-9 lg:static lg:flex lg:h-auto lg:w-auto lg:grow lg:justify-between lg:p-0"
       >
         <ul class="flex flex-col gap-5 lg:flex-row lg:items-center lg:gap-12 [&>li]:cursor-pointer">
+          <button class="cursor-pointer self-end lg:hidden" onclick="body.classList.toggle('menu-active') ">
+            <img src="images/icon-close-menu.svg" alt="" />
+          </button>
           <li class="relative">
             <details class="" id="features">
               <summary class="flex items-center gap-4 lg:gap-2">
@@ -109,7 +114,7 @@
       class="sm:my-container mt-[clamp(1.25rem,-0.2905rem+6.5728vw,5.5rem)] grid grid-cols-1 gap-10 lg:grid-cols-[1fr_1fr] lg:grid-rows-[1fr] lg:[&_*]:m-0"
     >
       <picture class="mx-auto justify-center lg:col-start-2 lg:flex lg:max-h-[580px] lg:justify-end">
-        <source srcset="images/image-hero-desktop.png" media="(width > 1024px)" />
+        <source srcset="images/image-hero-desktop.png" media="(width >= 1024px)" />
         <img class="h-auto lg:h-full" src="images/image-hero-mobile.png" alt="" />
       </picture>
       <section

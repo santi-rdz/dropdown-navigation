@@ -9,7 +9,7 @@ overlay.addEventListener("click", () => {
 document.addEventListener("click", (e) => {
   const clickedInDetails = e.target.closest("details");
   if (!clickedInDetails) {
-    details.forEach((detail) => detail.removeAttribute("open"));
+    details.forEach((detail) => (detail.open = false));
     return;
   }
   details.forEach((d) => d !== clickedInDetails && d.removeAttribute("open"));
